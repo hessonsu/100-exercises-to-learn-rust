@@ -34,16 +34,16 @@ impl Ticket {
         }
     }
 
-    pub fn title(self) -> String {
-        self.title
+    pub fn title(&self) -> &String {
+        &self.title
     }
 
-    pub fn description(self) -> String {
-        self.description
+    pub fn description(&self) -> &String {
+        &self.description
     }
 
-    pub fn status(self) -> String {
-        self.status
+    pub fn status(&self) -> &String {
+        &self.status
     }
 }
 
@@ -53,7 +53,7 @@ mod tests {
 
     #[test]
     fn works() {
-        let ticket = Ticket::new("A title".into(), "A description".into(), "To-Do".into());
+        let  ticket = &Ticket::new("A title".into(), "A description".into(), "To-Do".into());
         // If you change the signatures as requested, this should compile:
         // we can call these methods one after the other because they borrow `self`
         // rather than taking ownership of it.
